@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>EpisodeAdding</title>
+</head>
+<body>
+Enter data
+
+
+<form action="#" th:action="@{/episode/add}" object="*{episode}" name="episode" method="post"><table border="1">
+
+    <tr><td>
+        Name <input type="text" field="*{name}" name="name">
+    </td></tr>
+    <tr><td>
+        AirDate  <input type="text" field="*{airDate}" name="airDate">
+    </td></tr>
+    <tr><td>
+        Director  <input type="text" field="*{director}" name="director">
+    </td></tr>
+    <tr><td>
+        Writer <input type="text" field="*{writer}" name="writer">
+    </td></tr>
+    <tr><td>
+        ImgUrl  <input type="text" field="*{imgUrl}" name="imgUrl">
+    </td></tr>
+    <tr><td>
+        <input type="submit" value="Submit" />
+    </td></tr>
+</table></form>
+
+</body>
+</html>
+
+

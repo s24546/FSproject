@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="FS-api" />
+      </profile>
+      <profile name="Disabled">
+        <module name="FS-client" />
+        <module name="FS-data" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FS-api" target="17" />
+      <module name="FS-client" target="17" />
+      <module name="FS-data" target="17" />
+      <module name="FSproject" target="19" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="FS-api" options="-parameters" />
+      <module name="FS-client" options="-parameters" />
+      <module name="FS-data" options="-parameters" />
+      <module name="FSproject" options="-parameters" />
+    </option>
+  </component>
+</project>

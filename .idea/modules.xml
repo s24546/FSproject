@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FS-api/FS-api.iml" filepath="$PROJECT_DIR$/FS-api/FS-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FS-client/FS-client.iml" filepath="$PROJECT_DIR$/FS-client/FS-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FS-data/FS-data.iml" filepath="$PROJECT_DIR$/FS-data/FS-data.iml" />
+    </modules>
+  </component>
+</project>

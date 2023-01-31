@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CharacterAdding</title>
+</head>
+<body>
+Enter data
+
+<form action="#" th:action="@{/character/add}" object="*{character}" name="character" method="post"><table border="1">
+
+
+    <tr><td>
+        Name <input type="text" field="*{name}" name="name">
+    </td></tr>
+    <tr><td>
+       Status  <input type="text" field="*{status}" name="status">
+    </td></tr>
+    <tr><td>
+        Species  <input type="text" field="*{species}" name="species">
+    </td></tr>
+    <tr><td>
+        Gender <input type="text" field="*{gender}" name="gender">
+    </td></tr>
+    <tr><td>
+        Hair  <input type="text" field="*{hair}" name="hair">
+    </td></tr>
+    <tr><td>
+        Origin  <input type="text" field="*{origin}" name="origin">
+    </td></tr>
+    <tr><td>
+        ImgUrl  <input type="text" field="*{imgUrl}" name="imgUrl">
+    </td></tr>
+    <tr><td>
+        <input type="submit" value="Submit" />
+    </td></tr>
+</table></form>
+
+</body>
+</html>

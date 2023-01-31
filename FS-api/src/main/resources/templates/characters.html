@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Characters</title>
+    <style>
+        body {background-color: darksalmon;}
+    </style>
+</head>
+Characters
+<body>
+<table>
+    <tbody>
+    <tr th:each="character : ${characters}">
+        <td th:text ="${character.id}"></td>
+        <td th:text ="${character.name}"></td>
+        <td th:text ="${character.status}"></td>
+        <td th:text ="${character.species}"></td>
+        <td th:text ="${character.gender}"></td>
+        <td th:text ="${character.hair}"></td>
+        <td th:text ="${character.origin}"></td>
+        <td th:text ="${character.imgUrl}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

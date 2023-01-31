@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Episodes</title>
+    <style>
+        body {background-color: greenyellow;}
+    </style>
+</head>
+Episodes:
+<body>
+
+<table>
+    <tbody>
+    <tr th:each="episode : ${episodes}">
+        <td th:text ="${episode.id}"></td>
+        <td th:text ="${episode.name}"></td>
+        <td th:text ="${episode.airDate}"></td>
+        <td th:text ="${episode.director}"></td>
+        <td th:text ="${episode.writer}"></td>
+        <td th:text ="${episode.imgUrl}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+
+
