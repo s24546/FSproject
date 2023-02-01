@@ -1,9 +1,13 @@
 package com.fs.api.controllers;
 
 import com.fs.api.services.LocationService;
+import com.fs.client.contracts.CharacterDto;
+import com.fs.client.contracts.FsClient;
+import com.fs.client.contracts.LocationDto;
 import com.fs.data.model.Characters;
 import com.fs.data.model.Episodes;
 import com.fs.data.model.Locations;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +22,12 @@ import java.util.List;
 @Controller
 public class LocationController {
 LocationService locationService;
-@Autowired
-    public LocationController(LocationService locationService) {
+FsClient fsClient;
+    @Autowired
+    public LocationController(LocationService locationService, FsClient fsClient) {
         this.locationService = locationService;
+        this.fsClient = fsClient;
     }
-
     @GetMapping("show")
     public String showLocations(Model model){
         List<Locations> locationsList = (List<Locations>) locationService.findAll();
@@ -78,6 +83,21 @@ LocationService locationService;
     @PostMapping("delete")
     public String submitDeleteForm (@ModelAttribute Locations location){
         locationService.delete(location);
+        return "redirect:/location/show";
+    }
+
+    @GetMapping("addAll/form")
+    public String addAllForm(Model model) {
+        model.addAttribute("locations", new Locations());
+        return "form9";
+    }
+
+    @PostMapping("addAll")
+    public String addAllSubmit() {
+        List<LocationDto> LocationsDtoList = fsClient.getAllLocations();
+        ModelMapper mapper = new ModelMapper();
+        Locations[] asArray = mapper.map(LocationsDtoList, Locations[].class);
+        locationService.addAllLocations(List.of(asArray));
         return "redirect:/location/show";
     }
 }

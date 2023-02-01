@@ -15,16 +15,7 @@ public class EpisodeService {
     @Autowired
     public EpisodeService(EpisodeRepository episodeRepository) {
         this.episodeRepository = episodeRepository;
-     //   client.getAllEpisodes().forEach(episodeDto -> episodeRepository.save(new Episodes(episodeDto)));
     }
-
-//    public void updateEpisodeById(long id, Episodes episode) {
-//        episodeRepository.save(
-//                episodeRepository.findById(id)
-//                        .get()
-//                        .update(episode)
-//        );
-//    }
     public Optional<Episodes> getEpisodeById(long id) {
         return episodeRepository.findById(id);
     }
@@ -46,5 +37,8 @@ public class EpisodeService {
     public void delete(Episodes episode) { episodeRepository.delete(episode);}
     public Iterable<Episodes> findAll() {
         return episodeRepository.findAll();
+    }
+    public List<Episodes> addAllEpisodes(List<Episodes> episodes) {
+        return episodeRepository.saveAll(episodes);
     }
 }

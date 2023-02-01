@@ -1,8 +1,12 @@
 package com.fs.api.controllers;
 
 import com.fs.api.services.EpisodeService;
+import com.fs.client.contracts.CharacterDto;
+import com.fs.client.contracts.EpisodeDto;
+import com.fs.client.contracts.FsClient;
 import com.fs.data.model.Characters;
 import com.fs.data.model.Episodes;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,12 +22,12 @@ import java.util.List;
 public class EpisodeController {
 
 EpisodeService episodeService;
-
-@Autowired
-    public EpisodeController(EpisodeService episodeService) {
+    FsClient fsClient;
+    @Autowired
+    public EpisodeController(EpisodeService episodeService, FsClient fsClient) {
         this.episodeService = episodeService;
+        this.fsClient = fsClient;
     }
-
     @GetMapping("show")
     public String showEpisodes(Model model){
         List<Episodes> episodesList = (List<Episodes>) episodeService.findAll();
@@ -100,6 +104,21 @@ EpisodeService episodeService;
     @PostMapping("/delete")
     public String submitDeleteForm (@ModelAttribute Episodes episode){
         episodeService.delete(episode);
+        return "redirect:/episode/show";
+    }
+
+    @GetMapping("addAll/form")
+    public String addAllForm(Model model) {
+        model.addAttribute("episodes", new Episodes());
+        return "form8";
+    }
+
+    @PostMapping("addAll")
+    public String addAllSubmit() {
+        List<EpisodeDto> EpisodesDtoList = fsClient.getAllEpisodes();
+        ModelMapper mapper = new ModelMapper();
+        Episodes[] asArray = mapper.map(EpisodesDtoList, Episodes[].class);
+        episodeService.addAllEpisodes(List.of(asArray));
         return "redirect:/episode/show";
     }
 }
