@@ -19,13 +19,13 @@ public class LocationService {
         this.locationRepository = locationRepository;
       //  client.getAllLocations().forEach(locationDto -> locationRepository.save(new Locations(locationDto)));
     }
-    public void updateLocationById(long id, Locations location) {
-        locationRepository.save(
-                locationRepository.findById(id)
-                        .get()
-                        .update(location)
-        );
-    }
+//    public void updateLocationById(long id, Locations location) {
+//        locationRepository.save(
+//                locationRepository.findById(id)
+//                        .get()
+//                        .update(location)
+//        );
+//    }
     public Optional<Locations> getLocationById(long id) {
         return locationRepository.findById(id);
     }

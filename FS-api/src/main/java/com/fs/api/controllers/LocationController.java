@@ -40,15 +40,15 @@ LocationService locationService;
         locationService.addLocation(location);
         return "redirect:/location/show";
     }
-
-
-    @PatchMapping(value = "update/{id}")
-    public ResponseEntity<Object> updateLocationById(@RequestBody Locations location, @PathVariable long id){
-        if(locationService.getLocationById(id).isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        locationService.updateLocationById(id,location);
-        return null;
+    @GetMapping("update/form")
+    public String updateLocationForm(Model model, Long id){
+        model.addAttribute("locations", id);
+        return "form6";
+    }
+    @PatchMapping("update")
+    public String submitUpdateForm (@ModelAttribute Locations location){
+       locationService.addLocation(location);
+        return "redirect:/location/show";
     }
     @GetMapping("byname/{name}")
     public ResponseEntity<List<Object>> getLocationByName(@PathVariable String name) {

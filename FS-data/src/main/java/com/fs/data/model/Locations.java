@@ -27,18 +27,18 @@ public class Locations {
     public Locations(LocationDto locationDto) {
     }
 
-    public Locations update(Locations location) {
-        if (!location.name.isEmpty()) {
-            this.name = location.name;
-        }
-        if (!location.type.isEmpty()) {
-            this.type = location.type;
-        }
-        if (!location.type.isEmpty()) {
-            this.type = location.type;
-        }
-        return this;
-    }
+//    public Locations update(Locations location) {
+//        if (!location.name.isEmpty()) {
+//            this.name = location.name;
+//        }
+//        if (!location.type.isEmpty()) {
+//            this.type = location.type;
+//        }
+//        if (!location.type.isEmpty()) {
+//            this.type = location.type;
+//        }
+//        return this;
+//    }
 
     public Long getId() {
         return id;

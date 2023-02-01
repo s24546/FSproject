@@ -36,26 +36,26 @@ private String imgUrl;
     public Characters() {
     }
 
-    public Characters update(Characters character) {
-        if (!character.name.isEmpty()) {
-            this.name = character.name;
-        }
-        if (!character.status.isEmpty()) {
-            this.status = character.status;
-        }
-        if (!character.species.isEmpty()) {
-            this.species = character.species;
-        }if (!character.gender.isEmpty()) {
-            this.gender = character.gender;
-        }if (!character.hair.isEmpty()) {
-            this.hair = character.hair;
-        }if (!character.origin.isEmpty()) {
-            this.origin = character.origin;
-        }if (!character.imgUrl.isEmpty()) {
-            this.imgUrl = character.imgUrl;
-        }
-        return this;
-    }
+//    public Characters update(Characters character) {
+//        if (!character.name.isEmpty()) {
+//            this.name = character.name;
+//        }
+//        if (!character.status.isEmpty()) {
+//            this.status = character.status;
+//        }
+//        if (!character.species.isEmpty()) {
+//            this.species = character.species;
+//        }if (!character.gender.isEmpty()) {
+//            this.gender = character.gender;
+//        }if (!character.hair.isEmpty()) {
+//            this.hair = character.hair;
+//        }if (!character.origin.isEmpty()) {
+//            this.origin = character.origin;
+//        }if (!character.imgUrl.isEmpty()) {
+//            this.imgUrl = character.imgUrl;
+//        }
+//        return this;
+//    }
 
     public Long getId() {
         return id;

@@ -15,14 +15,7 @@ public class CharacterService {
     @Autowired
     public CharacterService(CharacterRepository characterRepository) {
         this.characterRepository = characterRepository;
-     //client.getAllCharacters().forEach(characterDto -> characterRepository.save(new Characters(characterDto)));
-    }
-    public void updateCharacterById(long id, Characters character) {
-        characterRepository.save(
-                characterRepository.findById(id)
-                        .get()
-                        .update(character)
-        );
+
     }
 
     public Optional<Characters> getCharacterById(long id) {
@@ -35,9 +28,15 @@ public class CharacterService {
     public void addCharacter(Characters character) {
         characterRepository.save(character);
     }
+    public void addAllCharacters(List<Characters> characters) {
+        characterRepository.saveAll(characters);
+
+    }
     public void delete(Characters character) { characterRepository.delete(character);}
     public Iterable<Characters> findAll() {
         return characterRepository.findAll();
     }
+
+
 
 }

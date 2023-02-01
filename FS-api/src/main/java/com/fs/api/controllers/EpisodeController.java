@@ -1,6 +1,7 @@
 package com.fs.api.controllers;
 
 import com.fs.api.services.EpisodeService;
+import com.fs.data.model.Characters;
 import com.fs.data.model.Episodes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,13 +42,15 @@ EpisodeService episodeService;
         return "redirect:/episode/show";
     }
 
-    @PatchMapping(value = "/update/{id}")
-    public ResponseEntity<Object> updateEpisodeById(@RequestBody Episodes episode, @PathVariable long id){
-        if(episodeService.getEpisodeById(id).isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        episodeService.updateEpisodeById(id,episode);
-        return null;
+    @GetMapping("update/form")
+    public String updateEpisodeForm(Model model, Long id){
+        model.addAttribute("episodes", id);
+        return "form5";
+    }
+    @PatchMapping("update")
+    public String submitUpdateForm (@ModelAttribute Episodes episode){
+        episodeService.save(episode);
+        return "redirect:/episode/show";
     }
     @GetMapping("/byname/{name}")
     public ResponseEntity<List<Object>> getEpisodeByName(@PathVariable String name) {

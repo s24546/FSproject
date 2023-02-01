@@ -18,13 +18,13 @@ public class EpisodeService {
      //   client.getAllEpisodes().forEach(episodeDto -> episodeRepository.save(new Episodes(episodeDto)));
     }
 
-    public void updateEpisodeById(long id, Episodes episode) {
-        episodeRepository.save(
-                episodeRepository.findById(id)
-                        .get()
-                        .update(episode)
-        );
-    }
+//    public void updateEpisodeById(long id, Episodes episode) {
+//        episodeRepository.save(
+//                episodeRepository.findById(id)
+//                        .get()
+//                        .update(episode)
+//        );
+//    }
     public Optional<Episodes> getEpisodeById(long id) {
         return episodeRepository.findById(id);
     }

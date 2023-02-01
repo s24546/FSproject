@@ -31,24 +31,24 @@ public class Episodes {
     public Episodes(EpisodeDto episodeDto) {
     }
 
-    public Episodes update(Episodes episode) {
-        if (!episode.name.isEmpty()) {
-            this.name = episode.name;
-        }
-        if (!episode.airDate.isEmpty()) {
-            this.airDate = episode.airDate;
-        }
-        if (!episode.director.isEmpty()) {
-            this.director = episode.director;
-        }
-        if (!episode.writer.isEmpty()) {
-            this.writer = episode.writer;
-        }
-        if (!episode.imgUrl.isEmpty()) {
-            this.imgUrl = episode.imgUrl;
-        }
-        return this;
-    }
+//    public Episodes update(Episodes episode) {
+//        if (!episode.name.isEmpty()) {
+//            this.name = episode.name;
+//        }
+//        if (!episode.airDate.isEmpty()) {
+//            this.airDate = episode.airDate;
+//        }
+//        if (!episode.director.isEmpty()) {
+//            this.director = episode.director;
+//        }
+//        if (!episode.writer.isEmpty()) {
+//            this.writer = episode.writer;
+//        }
+//        if (!episode.imgUrl.isEmpty()) {
+//            this.imgUrl = episode.imgUrl;
+//        }
+//        return this;
+//    }
 
     public String getName() {
         return name;

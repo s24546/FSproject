@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EpisodeModification</title>
+</head>
+<body>
+<form action="#" th:action="@{/episode/update}" object="*{episode}" name="episode" method="post"><table border="1">
+    <tr><td>
+        ID of object you want to modify <input type="number" field="*{id}" name="id">
+    </td></tr>
+    <tr><td>
+        Enter Data:
+    </td></tr>
+    <tr><td>
+        Name <input type="text" field="*{name}" name="name">
+    </td></tr>
+    <tr><td>
+        AirDate  <input type="text" field="*{airDate}" name="airDate">
+    </td></tr>
+    <tr><td>
+        Director  <input type="text" field="*{director}" name="director">
+    </td></tr>
+    <tr><td>
+        Writer <input type="text" field="*{writer}" name="writer">
+    </td></tr>
+    <tr><td>
+        ImgUrl  <input type="text" field="*{imgUrl}" name="imgUrl">
+    </td></tr>
+    <tr><td>
+        <input type="submit" value="Submit" />
+    </td></tr>
+</table></form>
+</body>
+</html>
