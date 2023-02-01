@@ -104,7 +104,7 @@ public class CharacterController {
         return "form4";
     }
 
-    @PatchMapping("update")
+    @PostMapping("update")
     public String submitUpdateForm(@ModelAttribute Characters character) {
         characterService.addCharacter(character);
         return "redirect:/character/show";

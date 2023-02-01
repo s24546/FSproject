@@ -51,7 +51,7 @@ EpisodeService episodeService;
         model.addAttribute("episodes", id);
         return "form5";
     }
-    @PatchMapping("update")
+    @PostMapping("update")
     public String submitUpdateForm (@ModelAttribute Episodes episode){
         episodeService.save(episode);
         return "redirect:/episode/show";

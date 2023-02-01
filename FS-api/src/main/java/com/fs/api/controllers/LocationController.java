@@ -50,7 +50,7 @@ FsClient fsClient;
         model.addAttribute("locations", id);
         return "form6";
     }
-    @PatchMapping("update")
+    @PostMapping("update")
     public String submitUpdateForm (@ModelAttribute Locations location){
        locationService.addLocation(location);
         return "redirect:/location/show";
